@@ -3,6 +3,7 @@ import random
 
 ListRand = ['aB','Cd','ef','Gh','ij','kl','mN','Op','Qr','St','u','V','w','x','X','yZ','z','Z','1','2','3','4','5','6','7','8','9','0']
 ListJoint = []
+ListJoint.clear()
 
 def genKey():
     random.shuffle(ListRand)
