@@ -8,7 +8,8 @@ def genKey():
     random.shuffle(ListRand)
     for a in ListRand:
         ListJoint.append(a)
-    return ListJoint[0]
+    
+    return ''.join(ListJoint)
     
 
 app = Flask(__name__)
