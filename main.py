@@ -1,4 +1,15 @@
 from flask import Flask, jsonify
+import random
+
+ListRand = ['aB','Cd','ef','Gh','ij','kl','mN','Op','Qr','St','u','V','w','x','X','yZ','z','Z','1','2','3','4','5','6','7','8','9','0']
+ListJoint = []
+
+def genKey():
+    random.shuffle(ListRand)
+    for a in ListRand:
+        ListJoint.append(a)
+    return ListJoint[0]
+    
 
 app = Flask(__name__)
 
@@ -10,7 +21,7 @@ def home():
 def get_key(userid):
     # Exemplo: sistema fake de keys
     keys = {
-        "manoel": "ABC123-KEY",
+        "manoel": genKey(),
         "teste": "XYZ789-KEY"
     }
     return jsonify({"key": keys.get(userid, "Nenhuma key encontrada")})
